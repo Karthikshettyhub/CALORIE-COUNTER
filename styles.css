@@ -1,0 +1,149 @@
+
+:root {
+    --light-grey: #f5f6f7;
+    --dark-blue: #0a0a23;
+    --fcc-blue: #1b1b32;
+    --light-yellow: #fecc4c;
+    --dark-yellow: #feac32;
+    --light-pink: #ffadad;
+    --dark-red: #850000;
+    --light-green: #acd157;
+    --white: #ffffff;
+    --black: #000000;
+}
+
+body {
+    font-family: "Lato", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    background-color: var(--fcc-blue);
+    color: var(--white);
+    transition: background-color 0.5s ease-in-out;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    animation: fadeIn 1s ease-in-out;
+    color: var(--light-yellow);
+}
+
+.container {
+    width: 90%;
+    max-width: 680px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+h1, .container, .output {
+    margin: 20px auto;
+}
+
+label, legend {
+    font-weight: bold;
+    color: var(--light-yellow);
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    cursor: pointer;
+    text-decoration: none;
+    background-color: var(--light-yellow);
+    border: 2px solid var(--dark-yellow);
+    padding: 8px 12px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+    color: var(--dark-blue);
+}
+
+button:hover {
+    background-color: var(--dark-yellow);
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button, input, select {
+    min-height: 24px;
+    color: var(--black);
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* 🟢 Better visibility for input fields */
+input, select {
+    border: 2px solid var(--light-grey);
+    padding: 6px;
+    background: var(--white);
+    color: var(--black);  /* Ensures text is visible */
+}
+
+/* Ensure dropdown options are clearly visible */
+select option {
+    background: var(--light-grey);
+    color: var(--black);
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--light-yellow);
+    box-shadow: 0 0 10px var(--light-yellow);
+}
+
+/* Improved output section visibility */
+.output {
+    border: 2px solid var(--light-grey);
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+    background: var(--dark-blue);  /* Darker background for contrast */
+    color: var(--white);
+}
+
+.output:hover {
+    transform: scale(1.03);
+}
+
+.hide {
+    display: none;
+}
+
+.output span {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: var(--light-yellow);
+}
+
+.surplus {
+    color: var(--light-pink);
+}
+
+.deficit {
+    color: var(--light-green);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
